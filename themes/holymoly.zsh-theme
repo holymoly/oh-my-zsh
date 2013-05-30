@@ -6,7 +6,8 @@
 # ------------------------------------------------------------------------------
 
 if [ "$(whoami)" = "root" ]; then USERCOLOR="red"; else USERCOLOR="grey"; fi
-if [ $SSH_CONNECTION ]; 
+if [ $SSH_CONNECTION ];
+  then 
   PROMPT='%{$fg_bold[$USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[green]%}%M% %{$fg_bold[yellow]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
   RPROMPT='[%*]';
   else 
