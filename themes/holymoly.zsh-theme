@@ -6,10 +6,13 @@
 # ------------------------------------------------------------------------------
 
 if [ "$(whoami)" = "root" ]; then USERCOLOR="red"; else USERCOLOR="grey"; fi
-if [ $SSH_CONNECTION ]; then SSH="green"; else SSH=""; fi
-
-PROMPT='%{$fg_bold[$USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[$SSH]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
-RPROMPT='[%*]'
+if [ $SSH_CONNECTION ]; 
+  PROMPT='%{$fg_bold[$USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[green]%}%M% %{$fg_bold[yellow]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
+  RPROMPT='[%*]';
+  else 
+  PROMPT='%{$fg_bold[$USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[yellow]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
+  RPROMPT='[%*]';
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="±(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
