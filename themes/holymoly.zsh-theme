@@ -8,7 +8,7 @@
 if [ "$(whoami)" = "root" ]; then USERCOLOR="red"; else USERCOLOR="grey"; fi
 if [ $SSH_CONNECTION ]; then SSH="green"; else SSH=""; fi
 
-PROMPT='%{$fg_bold[USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[SSH]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
+PROMPT='%{$fg_bold[$USERCOLOR]%}%n%{$reset_color%} %{$fg_bold[$SSH]%}%~%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}%{$fg[red]%}❯%{$reset_color%} '
 RPROMPT='[%*]'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="±(%{$fg[red]%}"
