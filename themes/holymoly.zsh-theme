@@ -28,4 +28,4 @@ else
   fi
 fi
 
-alias ls="ls -lsa"
+alias ls="ls -lsaG"
